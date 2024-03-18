@@ -23,6 +23,12 @@ const HomeScreen = ({ navigation }) => {
       <Text style={styles.title}>Welcome {user ? user.name : ''}</Text>
       <TouchableOpacity
         style={styles.button}
+        onPress={() => navigation.navigate('Map')}
+      >
+        <Text style={styles.buttonText}>Go to Map</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
         onPress={() => {
           auth().signOut()
           navigation.navigate('Login')
@@ -45,15 +51,17 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         marginBottom: 20,
+        color: '#78aaff',
     },
     button: {
-        backgroundColor: 'blue',
+        backgroundColor: '#78aaff',
         padding: 20,
         borderRadius: 5,
+        marginBottom: 10,
     },
     buttonText: {
         color: 'white',
         fontSize: 16,
     },
-    })
+})
     
